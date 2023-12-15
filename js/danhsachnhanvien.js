@@ -7,7 +7,8 @@ function NhanVien(
   _xepLoai,
   _tongLuong,
   _passWord,
-  _gioLam
+  _gioLam,
+  _luongCoBan
 ) {
   this.taiKhoan = _taiKhoan;
   this.hoVaTen = _hoVaTen;
@@ -18,6 +19,7 @@ function NhanVien(
   this.tongLuong = _tongLuong;
   this.passWord = _passWord;
   this.gioLam = _gioLam;
+  this.luongCoBan = _luongCoBan;
 }
 
 function danhSachNhanVien() {
@@ -35,4 +37,14 @@ function danhSachNhanVien() {
   };
   this.timKiemNV = function () {};
 }
+function timKiemLoaiNhanVien(keyword) {
+  var mangTimKiem = [];
 
+  for (var i = 0; i < this.array.length; i++) {
+    const nv = this.array[i];
+    if (nv.xepLoai === keyword) {
+      mangTimKiem.push(sv);
+    }
+  }
+  return mangTimKiem;
+}
